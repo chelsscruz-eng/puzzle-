@@ -1,0 +1,139 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ficha: 80px;
+    --lado: 4;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #17152b, #29244a, #453568);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+body::before {
+    content: "DESLIZA · ORDENA · RESUELVE";
+    color: #c5b8ff;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#vistaInicial img {
+    width: 300px;
+    max-width: 300%;
+    height: auto;
+    border-radius: 8px;
+}
+
+select,
+#mezclar {
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: #29244a;
+    color: white;
+    font-size: 14px;
+}
+
+#mezclar {
+    background: #7560b5;
+    cursor: pointer;
+}
+
+#mezclar:hover {
+    background: #8974cc;
+}
+
+
+#mensajeVictoria {
+    color: #d5c8ff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0 15px;
+}
+
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(var(--lado), var(--ficha));
+    grid-template-rows: repeat(var(--lado), var(--ficha));
+    gap: 4px;
+    padding: 10px;
+    background: rgba(10, 8, 25, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.ficha {
+    width: var(--ficha);
+    height: var(--ficha);
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: url("gato-puzzle.png");
+    background-repeat: no-repeat;
+}
+
+.ficha:hover {
+    filter: brightness(1.15);
+}
+
+.vacia {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    cursor: default;
+}
+
+.vacia:hover {
+    filter: none;
+}
+
+@media (max-width: 500px) {
+    :root {
+        --ficha: 60px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #tablero {
+        gap: 3px;
+        padding: 8px;
+    }
+
+    body::before {
+        letter-spacing: 2px;
+    }
+}

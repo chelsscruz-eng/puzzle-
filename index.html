@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompecabezas deslizante</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h1>Rompecabezas deslizante</h1>
+
+    <div class="controles">
+        <label for="dificultad">Dificultad:</label>
+
+        <select id="dificultad">
+            <option value="3">Fácil (3×3)</option>
+            <option value="4" selected>Normal (4×4)</option>
+        </select>
+
+        <button id="mezclar">Mezclar</button>        
+    </div>
+
+    <p id="mensajeVictoria"></p>
+
+    <div id="vistaInicial">
+        <img src="gato-puzzle.png" alt="Imagen del rompecabezas">
+    </div>
+    <div id="tablero"></div>
+
+</body>
+</html>
